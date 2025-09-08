@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RTSA_RAW_IQ_File>
+    <Samples>1310720</Samples>
+    <Clock unit="Hz">1000000.000000</Clock>
+    <CenterFrequency unit="Hz">2000000000.000000</CenterFrequency>
+    <SampleStartTime unit="Epoch time">1754593489.157779</SampleStartTime>
+    <Format>complex</Format>
+    <DataType>float32</DataType>
+    <DataFilename>500MHz_SNR.iq</DataFilename>
+</RTSA_RAW_IQ_File>

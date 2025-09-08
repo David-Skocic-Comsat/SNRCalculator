@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<RTSA_RAW_IQ_File>
+  <Samples>376</Samples>
+  <Clock unit="Hz">2000000.0</Clock>
+  <CenterFrequency unit="Hz">1090000000</CenterFrequency>
+  <SampleStartTime unit="Epoch time">1755806056.446517</SampleStartTime>
+  <Format>complex</Format>
+  <DataType>float32</DataType>
+  <DataFilename>adsb_20250821-155416-446.iq</DataFilename>
+  <ICAO>0d0bba</ICAO>
+</RTSA_RAW_IQ_File>

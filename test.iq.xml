@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RTSA_RAW_IQ_File>
+    <Samples>1302528</Samples>
+    <Clock unit="Hz">1000000.000000</Clock>
+    <CenterFrequency unit="Hz">2000000000.000000</CenterFrequency>
+    <SampleStartTime unit="Epoch time">1755872914.415464</SampleStartTime>
+    <Format>complex</Format>
+    <DataType>float32</DataType>
+    <DataFilename>test.iq</DataFilename>
+</RTSA_RAW_IQ_File>
