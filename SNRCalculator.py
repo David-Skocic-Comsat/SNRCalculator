@@ -125,7 +125,7 @@ def compute_channel_difference(power_spectrum_dB, signal_mask):
 
 def get_power_spectrum(iq_data, sample_rate):
     frequencies, power_spectrum_linear = signal.welch(
-        iq_data, fs=sample_rate, nperseg=1024)
+        iq_data, fs=sample_rate, nperseg=256)
     sorted_indices = np.argsort(frequencies)
     frequencies = frequencies[sorted_indices]
     power_spectrum_linear = power_spectrum_linear[sorted_indices]
@@ -152,7 +152,7 @@ def compute_signal_mask(power_spectrum_dB, threshold_dB):
 
 def main():
     # xml_path = Path("500MHz_SNR.iq.xml")
-    xml_path = Path("adsb_20250821-155416-446.iq.xml")
+    xml_path = Path("data/adsb_20250821-155416-446.iq.xml")
 
     if not xml_path.exists():
         print("XML file not found.")
@@ -162,13 +162,13 @@ def main():
     frequencies, power_spectrum_linear, power_spectrum_dB = get_power_spectrum(
         iq_data, sample_rate)
 
-    start_idx = np.searchsorted(frequencies, -150000, side='left')
-    end_idx = np.searchsorted(frequencies, 150000, side='right')
-    selected_values = np.arange(start_idx, end_idx)
-
-    frequencies = frequencies[selected_values]
-    power_spectrum_linear = power_spectrum_linear[selected_values]
-    power_spectrum_dB = power_spectrum_dB[selected_values]
+    # start_idx = np.searchsorted(frequencies, -150000, side='left')
+    # end_idx = np.searchsorted(frequencies, 150000, side='right')
+    # selected_values = np.arange(start_idx, end_idx)
+    #
+    # frequencies = frequencies[selected_values]
+    # power_spectrum_linear = power_spectrum_linear[selected_values]
+    # power_spectrum_dB = power_spectrum_dB[selected_values]
 
     noise_floor_dB, threshold_dB = compute_noise_floor_and_threshold_dB(
         power_spectrum_linear, threshold_multiplier=.15)
