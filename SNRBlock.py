@@ -1,4 +1,3 @@
-
 import numpy as np
 from gnuradio import gr
 from scipy import signal
@@ -20,11 +19,11 @@ class blk(gr.basic_block):
 
     def get_power_spectrum(self, iq_data):
         frequencies, power_spectrum_linear = signal.welch(
-            iq_data, fs=self.sample_rate, nperseg=256)
+            iq_data, fs=self.sample_rate, nperseg=256, return_onesided=False)
         sorted_indices = np.argsort(frequencies)
         self.frequencies = frequencies[sorted_indices]
         self.power_spectrum_linear = power_spectrum_linear[sorted_indices]
-        self.power_spectrum_dB = 10 * np.log10(power_spectrum_linear)
+        self.power_spectrum_dB = 10 * np.log10(self.power_spectrum_linear)
 
     def compute_noise_floor_and_threshold_dB(self, threshold_multiplier=0.15):
         self.noise_floor = np.percentile(self.power_spectrum_linear, 10)
